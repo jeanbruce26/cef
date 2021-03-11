@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Familia extends Model
 {
-    protected $table = 'Familia';
+    protected $table = 'familia';
     protected $primaryKey = 'idFamilia';
     protected $fillable = [
         
