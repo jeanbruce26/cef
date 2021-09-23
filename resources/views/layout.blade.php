@@ -1,108 +1,140 @@
-<!doctype html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="./assets/img/favicon.png">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <title>
-    SISTEMA DE CONTROL ENFERMERIA FAMILIAR
-  </title>
-  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-  <!--     Fonts and icons     -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-  <!-- CSS Files -->
-  <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="/assets/css/paper-dashboard.css?v=2.0.1" rel="stylesheet" />
-  <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="/assets/demo/demo.css" rel="stylesheet" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sistema Cef</title>
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/assets/css/datepicker3.css" rel="stylesheet">
+  <link href="/assets/css/styles.css" rel="stylesheet">
+  
+  <!--Custom Font-->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
 </head>
-
 <body>
-  <div class="wrapper">
-    <div class="sidebar" data-color="white" data-active-color="danger">
-      <div class="logo">
-        <a href="#" class="simple-text">
-       
-        </a>
-        <a href="#" class="simple-text logo-normal">
-            <H5><strong> SISTEMA CEF</strong></H5>
-          <!-- <div class="logo-image-big">
-            <img src="../assets/img/logo-big.png">
-          </div> -->
-        </a>
-      </div>
-      <div class="sidebar-wrapper">
-        <ul class="nav">
-          <?php $id_user = auth()->id() ?>
-          <li class="active">
-            <a href="{{ url('/iniciodatos' , [$id_user ])}}">
-              <i class="nc-icon nc-bank"></i>
-              <p>REGISTRAR FAMILIA</p>
-            </a>
+  <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse"><span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span></button>
+        <a class="navbar-brand" href="#"><span>Lumino</span>Admin</a>
+        <ul class="nav navbar-top-links navbar-right">
+          <li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+            <em class="fa fa-envelope"></em><span class="label label-danger">15</span>
+          </a>
+            <ul class="dropdown-menu dropdown-messages">
+              <li>
+                <div class="dropdown-messages-box"><a href="profile.html" class="pull-left">
+                  <img alt="image" class="img-circle" src="http://placehold.it/40/30a5ff/fff">
+                  </a>
+                  <div class="message-body"><small class="pull-right">3 mins ago</small>
+                    <a href="#"><strong>John Doe</strong> commented on <strong>your photo</strong>.</a>
+                  <br /><small class="text-muted">1:24 pm - 25/03/2015</small></div>
+                </div>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <div class="dropdown-messages-box"><a href="profile.html" class="pull-left">
+                  <img alt="image" class="img-circle" src="http://placehold.it/40/30a5ff/fff">
+                  </a>
+                  <div class="message-body"><small class="pull-right">1 hour ago</small>
+                    <a href="#">New message from <strong>Jane Doe</strong>.</a>
+                  <br /><small class="text-muted">12:27 pm - 25/03/2015</small></div>
+                </div>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <div class="all-button"><a href="#">
+                  <em class="fa fa-inbox"></em> <strong>All Messages</strong>
+                </a></div>
+              </li>
+            </ul>
           </li>
-
-          <li >
-            <a href="{{ url('/Familia' , [$id_user ])}}">
-              <i class="nc-icon nc-diamond"></i>
-              <p>FAMILIAS</p>
-            </a>
+          <li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+            <em class="fa fa-bell"></em><span class="label label-info">5</span>
+          </a>
+            <ul class="dropdown-menu dropdown-alerts">
+              <li><a href="#">
+                <div><em class="fa fa-envelope"></em> 1 New Message
+                  <span class="pull-right text-muted small">3 mins ago</span></div>
+              </a></li>
+              <li class="divider"></li>
+              <li><a href="#">
+                <div><em class="fa fa-heart"></em> 12 New Likes
+                  <span class="pull-right text-muted small">4 mins ago</span></div>
+              </a></li>
+              <li class="divider"></li>
+              <li><a href="#">
+                <div><em class="fa fa-user"></em> 5 New Followers
+                  <span class="pull-right text-muted small">4 mins ago</span></div>
+              </a></li>
+            </ul>
           </li>
-          
         </ul>
       </div>
-    </div>
-    <div class="main-panel" >
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
-        <div class="container-fluid">
-          <div class="navbar-wrapper">
-            <div class="navbar-toggle">
-              
-
-            </div>
-            
-          </div>
-          
-          <div class="collapse navbar-collapse justify-content-end" >
-            
-            <ul class="navbar-nav">
-              <li class="nav-item">
-        <a class="nav-link" href="{{ route('logout')}}" onclick="event.preventDefault();document.getElementById('fom_').submit(); ">
-          <div class="btn btn-danger">Cerrar Sesión</div>
-        </a>
-        <form method="post" action="{{ route('logout')}}" id="fom_">@csrf</form>
-      </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <!-- End Navbar -->
-      <div class="content">
-        <div class="row">
-          <div class="col-md-12">
-            @yield('content')
-          </div>
-        </div>
-      </div>
+    </div><!-- /.container-fluid -->
+  </nav>
+  <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+    <div class="profile-sidebar">
       
+      <div class="profile-usertitle">
+        <div class="profile-usertitle-name">{{ auth()->user()->name }}</div>
+        <div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
+      </div>
+      <div class="clear"></div>
     </div>
-  </div>
-  <!--   Core JS Files   -->
-  <script src="/assets/js/core/jquery.min.js"></script>
-  <script src="/assets/js/core/popper.min.js"></script>
-  <script src="/assets/js/core/bootstrap.min.js"></script>
-  <script src="/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-  <!--  Google Maps Plugin    -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-  <!-- Chart JS -->
-  <script src="/assets/js/plugins/chartjs.min.js"></script>
-  <!--  Notifications Plugin    -->
-  <script src="/assets/js/plugins/bootstrap-notify.js"></script>
-  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="/assets/js/paper-dashboard.min.js?v=2.0.1" type="text/javascript"></script>
+    <div class="divider"></div>
+   
+    <ul class="nav menu">
+      <?php $id_user = auth()->id() ?>
+      <li class="active"><a href="{{ url('/iniciodatos' , [$id_user ])}}"><em class="fa fa-dashboard">&nbsp;</em> REGISTRAR FAMILIA</a></li>
+      <li><a href="{{ url('/Familia' , [$id_user ])}}"><em class="fa fa-calendar">&nbsp;</em>FAMILIAS</a></li>
+    </ul>
+  </div><!--/.sidebar-->
+    
+  <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    
+    
+    <div class="container">
+    <div class="row">
+      <div class="col-sm-11">
+          @yield('content')
+      </div>
+    </div><!--/.row-->
+    </div>
+    
+    
+   
+    
+    
+  </div>  <!--/.main-->
+  
+  <script src="/assets/js/jquery-1.11.1.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="/assets/js/chart.min.js"></script>
+  <script src="/assets/js/chart-data.js"></script>
+  <script src="/assets/js/easypiechart.js"></script>
+  <script src="/assets/js/easypiechart-data.js"></script>
+  <script src="/assets/js/bootstrap-datepicker.js"></script>
+  <script src="/assets/js/custom.js"></script>
+  <script>
+    window.onload = function () {
+  var chart1 = document.getElementById("line-chart").getContext("2d");
+  window.myLine = new Chart(chart1).Line(lineChartData, {
+  responsive: true,
+  scaleLineColor: "rgba(0,0,0,.2)",
+  scaleGridLineColor: "rgba(0,0,0,.05)",
+  scaleFontColor: "#c5c7cc"
+  });
+};
+  </script>
+    
 </body>
-
 </html>
